@@ -9,8 +9,8 @@ Windows 10 Home Build 19044.1466 </br>
                 Libraries used: nltk 3.5, Tkinter v8.6</br>
 
 Added Features </br>
-(+) Resizable Grid</br>
-(+) No Play restriction time</br>
+(+) Dynamic Grid</br>
+(+) No Play restriction time (duh)</br>
 (+) Word length range from 4-9 letter words</br>
 (+) Word defintion at game end</br>
 (+) Edit any word on active grid (*)</br>
@@ -31,3 +31,5 @@ Bugs and possible fixes</br>
 (Temp Fix) Just keep in mind that letters aren't repeated for any words</br>
 
 
+[note] comment line 52, otherwise the word guessed by computer will be printed in terminal. </br>
+*This code was scripted in VS Code
