@@ -1,0 +1,74 @@
+#line by line explanation for program wordle.py
+line no.	Explanation
+2	[import]message box that shows information
+3	[import]to choose a random word
+4	[import]simple dailog box that retrieves info from user
+5	[import]wordnet wordlist which provides all words and their meaning
+6	[import]to compare word given by user and word that the computer has chosen
+7	[import]Tkinter GUI module all components
+
+12	for moving automatically to the next text box
+
+17	GET string from textbox widget
+18 & 19	if the length of the string is 1 move to the next widget
+
+23	move back to previous text box
+24	delete the contents of current box (before moving to previous textbox)
+
+29	declaring count,score and accuracy as global variables as they need to accessed in other functions 
+30	for every wrong guess of word deduct 150 points from original score(determined by len of word*200)
+31	adding 1 to count (this is to determine where the loop is for following steps)
+32	initialize a variable to store the user input from textboxes
+34	[in loop] get string from the current active line of textboxes in game. Here globals is used to 		create dynamic variable names of textboxes.
+35	[in loop]Disable the textboxes from which word is extracted
+36	[in loop]if the current line is lesser than the length of the original word (+1)(due to line 31)
+37 & 38	[in loop]enable the next line of textboxes and set focus
+39	[debugging] print the user entered word. Comment to hide in terminal
+40	store the ratio to which the user entered word and computer selected words are similar in a variable
+41	add to score after multiplying the ratio by 100
+42	[debugging] print the similarity ratio. Comment to hide in terminal
+44 	calculate accuracy by averaging by the number of times the user took to guess the word
+45	functional call
+
+49	GET all words of given length from wordnet wordlist into a list
+50	declare a variable which stores the word which the computer chooses
+51	computer chooses a word from generated wordlist
+52	[debugging] print the word which computer chooses. Comment to hide in terminal
+53,54,55 GET new word if word contains repeated letters or has "_" or contains a digit.
+57	RETURN the word
+
+61	DISPLAY a messagebox with a title and a message
+
+65-67	if the guessed word by the user and the word chosen by the computer matches then change the 		background color of current set of textboxes to GREEN
+68	[debugging] print that the user has won. Comment to hide from terminal
+69	show a message box with score,accuracy and definition of word
+71-73	if the guessed word by the user has letters in the word chosen by the computer at the same 		position then change the background color of the set of textboxes to GREEN
+75-77	if the guessed word by the user has letters in the word chosen by the computer matches then change 		the background color of the set of textboxes to YELLOW
+80	change the background color of textbox to gray if the letters arent in the computer word.
+81-82	if the user wasnt able to guess then DISPLAY a messagebox with score,accuracy and the word with 	meaning.
+86	declaring count,score and accuracy as global variables as they need to accessed in other functions 
+87	Tkinter GUI initialization
+88	SET the title as "WORDLE"
+89	change background of app to black
+90	SET an icon
+91	a dialogbox to get input from user about the length if word
+92	gets the word to be guessed from WORDLIST function
+93 	initialiazes score by multiplying the length of word by 200
+94	initiliaze accuracy
+95	initialize count to -1 (this is -1 because count=count+1 in line 31)
+96-99	[inloop]create a grid with size of length of word and size of length of word +1
+100	[inloop]place tectbox on grid row and column
+101	[inloop]pressing TAB when in textbox will cause the pointer to move to next textbox
+102	[inloop]pressing <any key> will call the RESTRICT funtion causing only one letter to be filled in one 	textbox at a time.
+103	[inloop]pressing BACKSPACE will delete the text of the current textbox and then return pointer to 	previous textbox
+104	[future use] to reset the grid textboxes
+105,106	DISABLE all textboxes except the start line of textboxes
+108	create a button to use as Enter button
+109	place the grid at a particular position
+110	pressing RETURN when focus is on the Enter button will fire the GET_WORD function
+111	pressing BACKSPACE when focus is on the Button will shift the pointer to previous textbox
+113	Create a label to say WORDLE and place it in the middle
+114 	Tkinter GUI ends
+115	return the length of words
+
+119	initialize the program	
